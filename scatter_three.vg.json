@@ -1,0 +1,223 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "hconcat": [
+      {
+        "width": 475,
+        "height": 400,
+        "title": "Gini Coefficient vs Expenditure Mean for 2022",
+        "data": {
+          "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
+        },
+        "layer": [
+          {
+            "selection": {
+              "state_highlight": {
+                "type": "multi",
+                "fields": ["state"],
+                "bind": "legend"
+              }
+            },
+            "mark": {
+              "type": "circle",
+              "size": 50
+            },
+            "encoding": {
+              "x": {
+                "field": "gini",
+                "type": "quantitative",
+                "title": "Gini Coefficient",
+                "scale": {"domain": [0.28, 0.4]}
+              },
+              "y": {
+                "field": "expenditure_mean",
+                "type": "quantitative",
+                "title": "Average Expenditure"
+              },
+              "color": {
+                "field": "state",
+                "type": "nominal"
+              },
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal"},
+                {"field": "gini", "type": "quantitative"},
+                {"field": "expenditure_mean", "type": "quantitative"}
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": -10,
+              "dy": -10,
+              "fontSize": 9
+            },
+            "encoding": {
+              "x": {"field": "gini", "type": "quantitative"},
+              "y": {"field": "expenditure_mean", "type": "quantitative"},
+              "text": {"field": "state", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['state']=='Labuan' || datum['state']=='Kuala Lumpur' || datum['state']=='Sabah' || datum['state']=='Putrajaya'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "width": 475,
+        "height": 400,
+        "title": "Gini Coefficient vs Median Income for 2022",
+        "data": {
+          "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
+        },
+        "layer": [
+          {
+            "selection": {
+              "state_highlight": {
+                "type": "multi",
+                "fields": ["state"],
+                "bind": "legend"
+              }
+            },
+            "mark": {
+              "type": "circle",
+              "size": 50
+            },
+            "encoding": {
+              "x": {
+                "field": "gini",
+                "type": "quantitative",
+                "title": "Gini Coefficient",
+                "scale": {"domain": [0.28, 0.4]}
+              },
+              "y": {
+                "field": "income_median",
+                "type": "quantitative",
+                "title": "Median Income"
+              },
+              "color": {
+                "field": "state",
+                "type": "nominal"
+              },
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal"},
+                {"field": "gini", "type": "quantitative"},
+                {"field": "income_median", "type": "quantitative"}
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": -10,
+              "dy": -10,
+              "fontSize": 9
+            },
+            "encoding": {
+              "x": {"field": "gini", "type": "quantitative"},
+              "y": {"field": "income_median", "type": "quantitative"},
+              "text": {"field": "state", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['state']=='Labuan' || datum['state']=='Kuala Lumpur' || datum['state']=='Sabah'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "width": 475,
+        "height": 400,
+        "title": "Gini Coefficient vs Poverty Rate for 2022",
+        "data": {
+          "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
+        },
+        "layer": [
+          {
+            "selection": {
+              "state_highlight": {
+                "type": "multi",
+                "fields": ["state"],
+                "bind": "legend"
+              }
+            },
+            "mark": {
+              "type": "circle",
+              "size": 50
+            },
+            "encoding": {
+              "x": {
+                "field": "gini",
+                "type": "quantitative",
+                "title": "Gini Coefficient",
+                "scale": {"domain": [0.28, 0.4]}
+              },
+              "y": {
+                "field": "poverty",
+                "type": "quantitative",
+                "title": "Poverty Rate",
+                "scale": {"domain": [0, 22]}
+              },
+              "color": {
+                "field": "state",
+                "type": "nominal"
+              },
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal"},
+                {"field": "gini", "type": "quantitative"},
+                {"field": "poverty", "type": "quantitative"}
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "baseline": "middle",
+              "dx": -10,
+              "dy": -10,
+              "fontSize": 9
+            },
+            "encoding": {
+              "x": {"field": "gini", "type": "quantitative"},
+              "y": {"field": "poverty", "type": "quantitative"},
+              "text": {"field": "state", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['state']=='Labuan' || datum['state']=='Sabah' || datum['state']=='Putrajaya' || datum['state']=='Kuala Lumpur'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,113 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Average Income, Median Income, and Average Expenditure by State",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "anchor": "middle"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
+    },
+    "hconcat": [
+      {
+        "width": 300,
+        "height": 300,
+        "layer": [
+          {
+            "mark": {"type": "arc", "innerRadius": 75},
+            "selection": {
+              "state_highlight": {
+                "type": "multi",
+                "fields": ["state"],
+                "bind": "legend"
+              }
+            },
+            "encoding": {
+              "theta": {"field": "income_mean", "type": "quantitative"},
+              "color": {"field": "state", "type": "nominal"},
+              "stroke": {"value": "white"},
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal", "title": "State"},
+                {"field": "income_mean", "type": "quantitative", "title": "Mean Income (RM)", "format": ","}
+              ]
+            }
+          },
+          {
+            "mark": {"type": "text", "align": "center", "baseline": "middle", "fontSize": 15,
+                     "font": "Arial", "fontWeight": "normal"},
+            "encoding": {
+              "text": {"value": "Average Income"},
+              "x": {"signal": "width / 2"},
+              "y": {"signal": "height / 2"}
+            }
+          }
+        ]
+      },
+      {
+        "width": 300,
+        "height": 300,
+        "layer": [
+          {
+            "mark": {"type": "arc", "innerRadius": 75},
+            "encoding": {
+              "theta": {"field": "income_median", "type": "quantitative"},
+              "color": {"field": "state", "type": "nominal"},
+              "stroke": {"value": "white"},
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal", "title": "State"},
+                {"field": "income_median", "type": "quantitative", "title": "Median Income (RM)", "format": ","}
+              ]
+            }
+          },
+          {
+            "mark": {"type": "text", "align": "center", "baseline": "middle", "fontSize": 15},
+            "encoding": {
+              "text": {"value": "Median Income"},
+              "x": {"signal": "width / 2"},
+              "y": {"signal": "height / 2"}
+            }
+          }
+        ]
+      },
+      {
+        "width": 300,
+        "height": 300,
+        "layer": [
+          {
+            "mark": {"type": "arc", "innerRadius": 75},
+            "encoding": {
+              "theta": {"field": "expenditure_mean", "type": "quantitative"},
+              "color": {"field": "state", "type": "nominal"},
+              "stroke": {"value": "white"},
+              "opacity": {
+                "condition": {"selection": "state_highlight", "value": 1},
+                "value": 0.2
+              },
+              "tooltip": [
+                {"field": "state", "type": "nominal", "title": "State"},
+                {"field": "expenditure_mean", "type": "quantitative", "title": "Mean Expenditure (RM)", "format": ","}
+              ]
+            }
+          },
+          {
+            "mark": {"type": "text", "align": "center", "baseline": "middle", "fontSize": 15},
+            "encoding": {
+              "text": {"value": "Average Expenditure"},
+              "x": {"signal": "width / 2"},
+              "y": {"signal": "height / 2"}
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
