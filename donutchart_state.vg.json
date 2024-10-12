@@ -30,7 +30,7 @@
                   "#A6D854", "#FFD92F", "#E5C494", "#B3B3B3"
                 ]
               },
-              "legend": {"orient": "none", "direction": "horizontal","titleAnchor":"middle", "title":"State", "legendX":0, "legendY":320}
+              "legend": {"orient": "none", "direction": "horizontal","title":"State", "legendX":20, "legendY":320}
             },
             "tooltip": [
               {"field": "state", "type": "nominal", "title": "State"},

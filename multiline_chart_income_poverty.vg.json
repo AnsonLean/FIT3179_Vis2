@@ -77,7 +77,7 @@
                     "type": "nominal",
                     "scale": {"domain": ["Average Income", "Median Income"],
                               "range": ["blue", "orange","red", "turquoise", "purple"]},
-                    "legend": {"title": "Type", "orient": "none","direction": "horizontal","titleAnchor":"middle", "legendX":280, "legendY":330}
+                    "legend": {"title": "Type", "orient": "none","direction": "horizontal","titleAnchor":"middle", "legendX":270, "legendY":330}
                 },
                 "tooltip": [
                     {"field": "date", "type": "temporal", "title": "Date"},

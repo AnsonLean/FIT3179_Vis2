@@ -5,7 +5,7 @@
     "height": 300,
     "title": "Expense (% of GDP) rankings of countries over time",
     "data": {
-      "url": "bumpchart_expenses.json" 
+      "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/bumpchart_expenses.json" 
     },
     "layer": [
       {
