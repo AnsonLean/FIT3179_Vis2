@@ -1,0 +1,175 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hh_income_poverty.csv"
+    },
+    "vconcat": [
+      {
+        "hconcat": [
+            {
+                "width": 300,
+                "height": 300,
+                "title": "Average and Median Income of Malaysian Households",
+                "selection": {
+                "income_type_highlight": {
+                    "type": "multi",
+                    "fields": ["Type Tooltip"],
+                    "bind": "legend"
+                }
+                },
+                "mark": {"type": "line", "tooltip": true, "point": true},
+                "transform": [
+                {"fold": ["income_mean", "income_median","poverty_absolute", "poverty_hardcore", "poverty_relative","gini"], "as": ["Type", "Value"]},
+                {
+                    "calculate": "datum['Type'] == 'income_mean' ? 'Average Income' : datum['Type'] == 'income_median' ? 'Median Income' : 0",
+                    "as": "Type Tooltip"
+                }
+                ],
+                "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "scale": {"domain": {"param": "brush"}},
+                    "axis": {"title": ""}
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative",
+                    "axis": {"title": "Income (RM)"}
+                },
+                "color": {
+                    "field": "Type Tooltip",
+                    "type": "nominal",
+                    "scale": {"domain": ["Average Income", "Median Income"],
+                              "range": ["blue", "orange","red", "turquoise", "purple"]},
+                    "legend": {"title": "Type", "orient": "none","direction": "horizontal","titleAnchor":"middle", "legendX":270, "legendY":330}
+                },
+                "tooltip": [
+                    {"field": "date", "type": "temporal", "title": "Date"},
+                    {"field": "Value", "type": "quantitative", "title": "Income (RM)", "format": ","},
+                    {"field": "Type Tooltip", "type": "nominal", "title": "Type"}
+                ],
+                "opacity": {
+                    "condition": {"selection": "income_type_highlight", "value": 1},
+                    "value": 0.2
+                }
+                }
+            },
+            {
+                "width": 300,
+                "height": 300,
+                "title": "Poverty Indicators in Malaysia",
+                "selection": {
+                "poverty_type_highlight": {
+                    "type": "multi",
+                    "fields": ["Type Tooltip"],
+                    "bind": "legend"
+                }
+                },
+                "mark": {"type": "line", "tooltip": true, "point": true},
+                "transform": [
+                {
+                    "fold": ["poverty_absolute", "poverty_hardcore", "poverty_relative"],
+                    "as": ["Type", "Poverty"]
+                },
+                {"calculate": "datum.Poverty == 0 ? 'No data' : datum.Poverty", "as": "poverty_tooltip"},
+                {
+                    "calculate": "datum['Type'] == 'poverty_absolute' ? 'Absolute Poverty' : datum['Type'] == 'poverty_hardcore' ? 'Hardcore Poverty' : 'Relative Poverty'",
+                    "as": "Type Tooltip"
+                }
+                ],
+                "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "scale": {"domain": {"param": "brush"}},
+                    "axis": {"title": ""}
+                },
+                "y": {
+                    "field": "Poverty",
+                    "type": "quantitative",
+                    "axis": {"title": "Poverty Level"}
+                },
+                "color": {
+                    "field": "Type Tooltip",
+                    "type": "nominal",
+                    "scale": {"domain": ["Absolute Poverty", "Hardcore Poverty", "Relative Poverty"]},
+                    "legend": {"title": "Type"}
+                },
+                "tooltip": [
+                    {"field": "date", "type": "temporal", "title": "Date"},
+                    {"field": "poverty_tooltip", "type": "nominal", "title": "Poverty Level"},
+                    {"field": "Type Tooltip", "type": "nominal", "title": "Type"}
+                ],
+                "opacity": {
+                    "condition": {"selection": "poverty_type_highlight", "value": 1},
+                    "value": 0.2
+                }
+                }
+            },
+            {
+              "width": 300,
+              "height": 300,
+              "title": "Unemployment Rate",
+              "data":{
+                "url": "./dataset/lfs_year.csv"
+              },
+              "selection": {
+                "poverty_type_highlight": {
+                  "type": "multi",
+                  "fields": ["Type Tooltip"],
+                  "bind": "legend"
+                }
+              },
+              "layer": [
+                {
+                  "mark": {"type": "line", "tooltip": true, "color":"black","point": {"color":"black"}},
+                  "encoding":{
+                      "x": {
+                      "field": "date",
+                      "type": "temporal",
+                      "scale": {"domain": {"param": "brush"}},
+                      "axis": {"title": ""}
+                    },
+                    "y": {
+                      "field": "u_rate",
+                      "type": "quantitative",
+                      "axis": {"title": "Unemployment Rate"}
+                    },
+                    "tooltip": [
+                      {"field": "date", "type": "temporal", "title": "Date"},
+                      {"field": "u_rate", "type": "quantitative", "title": "Unemployment Rate"}
+                    ],
+                    "opacity": {
+                      "condition": {"selection": "poverty_type_highlight", "value": 1},
+                      "value": 0.2
+                    }
+                  }
+                },
+                {
+                  "mark": {"type": "text", "fontSize": 13, "fontStyle": "italic", "font": "Arial"},
+                  "encoding": {"text": {"value": "Note: There is no data for year 1970 -1981"}, "x":{ "value": 145}, "y": {"value": 285}}
+                }
+              ]
+          }
+        ]
+      },
+      {
+        "width": 1035,
+        "height": 50,
+        "mark": "line",
+        "params": [
+          {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+        ],
+        "encoding": {
+          "x": {"field": "date", "type": "temporal"},
+          "y": {"field": "income_mean", "type": "quantitative", "axis": {"title": "Average Income"}},
+          "axis": {"tickCount": 3, "grid": false}
+        }
+      }
+    ],
+    "config": {
+      "title": {"font": "sans-serif", "fontSize": 14}
+    }
+  }
+  

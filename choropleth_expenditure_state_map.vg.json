@@ -72,7 +72,7 @@
         "url": "ne_110m_graticules_5.json",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
       },
-      "mark": {"type": "geoshape", "stroke": "darkgray"}
+      "mark": {"type": "geoshape", "stroke": "lightgray"}
     }
   ]
 }

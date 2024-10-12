@@ -17,8 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 
-    <title>Malaysia Household</title>
-
 </head>
 
 
@@ -31,7 +29,7 @@
             </div>
             <!-- Dropdown for map selection-->
             <div class="pure-u-1-1">
-                <label for="map_selection">Select a map:</label>
+                <label for="map_selection">Choose your Data:</label>
                 <select id="map_selection">
                     <option value="choropleth_mean_state_map.vg.json">Average Income</option>
                     <option value="choropleth_median_state_map.vg.json">Median Income</option>
@@ -43,33 +41,52 @@
             <div class="pure-u-1-1">
                 <div id="map" class="vis-container"></div>
             </div>
+            <div class="pure-u-1-1">
+                <p>In general, <b>Kuala Lumpur, Selangor</b> and <b>Putrajaya</b> has the <b>highest average income, median income</b> and <b>average expenditure</b>. 
+                    These three states also has the <b>lowest poverty rate</b>. But <i>Kuala Lumpur has the highest inequality</i> compared to the other two states.</p>
+                <p>On the other hand, <b>Sabah</b> has the <b>highest poverty rate</b> even thought it <b>does not have the lowest average income</b>.
+                   But Sabah does have the <b>highest inequality among all states</b>.</p>
+            </div>
         </div>
         
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>Household Trends in Malaysia</h2>
             </div>
+
+            <div class="pure-u-1-1">
+                <p>Have a look at the trend of income, poverty and unemployment rate</p>
+            </div>
+
             <div class="pure-u-1-1">
                 <div id="trend_line" class="vis-container"></div>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>Both average and median income has steadily increase across the years.</p>
+                <p>But sadly, due to COVID-19 pandemic, the income has drop heavily for the year 2020</p>
+                <p>If there was no pandemic, the average income of malaysian household would have break through RM9000.</p>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p><b>Absolute Poverty</b>: Household don't have sufficient income to meet basic needs for a dignified life.</p>
+                <p><b>Hardcore Poverty</b>: Household don't have sufficient income to meet basic calorie requirement. </p>
+                <p><b>Relative Poverty</b>: When gross monthly household income is below half the national median income</p>
+                <p>For more details: Refer to these <a href="https://open.dosm.gov.my/publications/technical-notes/hies-technotes" target="_blank"> technical notes</a>. </p>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>For the year 1982 - 1985, the unemployment rate has spiked due to low level of labor utilisation</p>
+                <p>The unemployment rate stabilised around 3% - 4% for a few decades</p>
+                <p>But due to COVID-19, the unemployment rate spiked during year 2019 - 2020</p>
             </div>
         </div>
 
         <div class="pure-g">
             <div class="pure-u-1-1">
-                <h2>Inequality Correlations</h2>
-                <p>Note: The gini coefficient is between 0.28 - 0.40</p>
+                <h2>Correlations</h2>
+                <p>Value of 0 indicate perfect equality and Value of 1 indicate total inequality</p>
+                <p>Note: The gini coefficient is ranges between 0.28 - 0.40.</p>
             </div>
 
             <div class="pure-u-1-1">
@@ -77,15 +94,21 @@
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>On average, we can see that most states have average income around RM 5,500 and average expenditure around RM 3,900.</p>
+                <p>Putrajaya has both the highest average income and expenditure across all states.</p>
+                <p>Our capital city Kuala Lumpur has the second highest average income and expenditure.</p>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>Sabah has the highest poverty rate but do not have the lowest income.</p>
+                <p>Putrajaya has the highest average income and the lowest poverty rate.</p>
+                <p>Our capital city Kuala Lumpur has the second highest average income and second lowest povery rate.</p>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>Wealthier states like Putrajaya and Selangor, where moderate inequality is paired with low poverty rates.</p>
+                <p>Kelantan and Sabah face both high poverty and inequality, likely due to weaker economic infrastructure and fewer safety nets.</p>
+                <p>Our capital city Kuala Lumpur has the second lowest povert rate but has a high inequality.</p>
             </div>
 
         </div>
@@ -95,23 +118,27 @@
                 <h2>State Comparison</h2>
             </div>
 
-            <div class="pure-u-1-1">
-                <div id="donut"></div>
+            <div class="pure-u-1-3">
+                <div id="donut_income"></div>
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <p>Did you notice that both average income and expenditure looks similar across all states?</p>
+                <div class="container">
+                    <img src="shocked.jpeg" alt="shocked" class="image" width="200">
+                    <p class="text">Surprised?</p>
+                </div>
+                <p>This shows that regardless how high or low one's income is, the expenditure is still always around the same percentage (58% - 60%)</p>
+                
             </div>
 
             <div class="pure-u-1-3">
-                <p>hi</p>
+                <div id="donut_exp"></div>
             </div>
 
-            <div class="pure-u-1-3">
-                <p>hi</p>
-            </div>
 
         </div>
+
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>South East Asia GDP Comparison</h2>
@@ -126,13 +153,28 @@
             </div>
 
             <div class="pure-u-1-2">
-                <p>Hi</p>
+                <p>From above, we can see that the ranking remains the same for these 5 years.</p>
+                <p>Not changes in ranking for gross domestic product (GDP). But will it be the same with expenses?</p>
+                <p>As Malaysian, we can stand proud that our ranking has stayed at 2 over these 5 years.</p>
             </div>
 
             <div class="pure-u-1-2">
-                <p>Hi</p>
+                <p>The expenses here are based on the percentage of the GDP.</p>
+                <p>Unlike the consistent ranking of GDP, the ranking here fluctuates over these 5 years.</p>
+                <p>We, Malaysian, has stayed at rank 2 from 2016 - 2019, but has drop to rank 3 for 2020 - 2021</p>
             </div>
 
+        </div>
+
+        <div class="metadata">
+            <p>Author: Anson Lean Huai Shen</p>
+            <p>Dashboard updated: 12 October 2024</p>
+            <p>Data Sources:</p>
+            <ul>
+                <li><a href="https://data.gov.my" target="_blank">data.gov.my</a> - Updated date: 2022</li>
+                <li><a href="https://data.worldbank.org/indicator/" target="_blank">World Bank</a> - Updated date: 2023</li>
+            </ul>
+            <p>Image Source: <a href="https://google.com"> Google</a></p>
         </div>
 
     </div>
@@ -142,7 +184,7 @@
         
         //Function to load map
         function loadMap(mapFile){
-            vegaEmbed("#map", mapFile).then(function(result) {
+            vegaEmbed("#map", mapFile,{actions: false}).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
             }).catch(console.error);
         }
@@ -155,28 +197,33 @@
             loadMap(selectedMap);
         });
 
-        var vg_2 = "multiline_chart_income_poverty.vg.json"; 
-        vegaEmbed("#trend_line", vg_2).then(function(result) {
+        var vg_2 = "multiline_chart_employment_income_poverty.vg.json"; 
+        vegaEmbed("#trend_line", vg_2,{actions: false}).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var vg_3 = "donutchart_state.vg.json"; 
-        vegaEmbed("#donut", vg_3).then(function(result) {
+        var vg_3 = "donut_avg_income.vg.json"; 
+        vegaEmbed("#donut_income", vg_3,{actions: false}).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vg_4 = "scatter_three.vg.json"; 
-        vegaEmbed("#scatter", vg_4).then(function(result) {
+        vegaEmbed("#scatter", vg_4,{actions: false}).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vg_5 = "bumpchart_gdp.vg.json"; 
-        vegaEmbed("#bump_gdp", vg_5).then(function(result) {
+        vegaEmbed("#bump_gdp", vg_5,{actions: false}).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vg_6 = "bumpchart_expenses.vg.json"; 
-        vegaEmbed("#bump_exp", vg_6).then(function(result) {
+        vegaEmbed("#bump_exp", vg_6,{actions: false}).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg_7 = "donut_avg_exp.vg.json"; 
+        vegaEmbed("#donut_exp", vg_7,{actions: false}).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>

@@ -44,7 +44,7 @@
         "url": {"field": "Flag"},
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "GDP_per_capita", "type": "quantitative", "title": "GDP per capita", "format":","},
+          {"field": "GDP_per_capita", "type": "quantitative", "title": "GDP per capita (RM)", "format":","},
           {"field": "Year", "type": "ordinal"},
           {"field": "Rank", "type": "quantitative"}
         ]

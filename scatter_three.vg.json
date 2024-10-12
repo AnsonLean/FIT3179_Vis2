@@ -4,7 +4,7 @@
       {
         "width": 300,
         "height": 300,
-        "title": "Gini Coefficient vs Expenditure Mean for 2022",
+        "title": "Income Mean vs Expenditure Mean for 2022",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
         },
@@ -23,10 +23,9 @@
             },
             "encoding": {
               "x": {
-                "field": "gini",
+                "field": "income_mean",
                 "type": "quantitative",
-                "title": "Gini Coefficient",
-                "scale": {"domain": [0.28, 0.4]}
+                "title": "Average Income"
               },
               "y": {
                 "field": "expenditure_mean",
@@ -52,8 +51,8 @@
               },
               "tooltip": [
                 {"field": "state", "type": "nominal"},
-                {"field": "gini", "type": "quantitative"},
-                {"field": "expenditure_mean", "type": "quantitative"}
+                {"field": "income_mean", "type": "quantitative", "title":"Average Income (RM)", "format": ","},
+                {"field": "expenditure_mean", "type": "quantitative", "title":"Average Expenditure (RM)", "format": ","}
               ]
             }
           },
@@ -67,13 +66,13 @@
               "fontSize": 9
             },
             "encoding": {
-              "x": {"field": "gini", "type": "quantitative"},
+              "x": {"field": "income_mean", "type": "quantitative"},
               "y": {"field": "expenditure_mean", "type": "quantitative"},
               "text": {"field": "state", "type": "nominal"},
               "color": {"value": "black"},
               "opacity": {
                 "condition": {
-                  "test": "datum['state']=='Labuan' || datum['state']=='Kuala Lumpur' || datum['state']=='Sabah' || datum['state']=='Putrajaya'",
+                  "test": " datum['state']=='Kuala Lumpur' || datum['state']=='Sabah' || datum['state']=='Putrajaya'",
                   "value": 1
                 },
                 "value": 0
@@ -104,15 +103,15 @@
             },
             "encoding": {
               "x": {
-                "field": "gini",
+                "field": "income_mean",
                 "type": "quantitative",
-                "title": "Gini Coefficient",
-                "scale": {"domain": [0.28, 0.4]}
+                "title": "Average Income"
               },
               "y": {
-                "field": "income_median",
+                "field": "poverty",
                 "type": "quantitative",
-                "title": "Median Income"
+                "title": "Poverty Rate",
+                "scale": {"domain": [0, 22]}
               },
               "color": {
                 "field": "state",
@@ -132,8 +131,8 @@
               },
               "tooltip": [
                 {"field": "state", "type": "nominal"},
-                {"field": "gini", "type": "quantitative"},
-                {"field": "income_median", "type": "quantitative"}
+                {"field": "income_mean", "type": "quantitative","title":"Average Income (RM)", "format": ","},
+                {"field": "poverty", "type": "quantitative","title":"Povery Rate"}
               ]
             }
           },
@@ -147,13 +146,13 @@
               "fontSize": 9
             },
             "encoding": {
-              "x": {"field": "gini", "type": "quantitative"},
-              "y": {"field": "income_median", "type": "quantitative"},
+              "x": {"field": "income_mean", "type": "quantitative"},
+              "y": {"field": "poverty", "type": "quantitative"},
               "text": {"field": "state", "type": "nominal"},
               "color": {"value": "black"},
               "opacity": {
                 "condition": {
-                  "test": "datum['state']=='Labuan' || datum['state']=='Kuala Lumpur' || datum['state']=='Sabah'",
+                  "test": "datum['state']=='Putrajaya' || datum['state']=='Kuala Lumpur' || datum['state']=='Sabah'",
                   "value": 1
                 },
                 "value": 0
@@ -213,8 +212,8 @@
               },
               "tooltip": [
                 {"field": "state", "type": "nominal"},
-                {"field": "gini", "type": "quantitative"},
-                {"field": "poverty", "type": "quantitative"}
+                {"field": "gini", "type": "quantitative", "title":"Inequality Coefficient", "format": ".4f"},
+                {"field": "poverty", "type": "quantitative", "title":"Povery Rate"}
               ]
             }
           },
@@ -240,6 +239,10 @@
                 "value": 0
               }
             }
+          },
+          {
+            "mark": {"type": "text", "fontSize": 12, "fontStyle": "italic", "font": "Arial"},
+            "encoding": {"text": {"value": "Note: Gini Coefficient range between 0.28 - 0.40"}, "x":{ "value": 130}, "y": {"value": 10}}
           }
         ]
       }
