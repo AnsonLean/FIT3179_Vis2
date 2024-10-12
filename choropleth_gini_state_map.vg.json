@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Gini Coefficient by State in Malaysia (2022)",
-  "width": 1250,
+  "width": 1150,
   "height": 500,
   "projection": {
     "type": "mercator",
-    "scale": 3400,
-    "center": [105, 5],
+    "scale": 3300,
+    "center": [106, 5],
     "translate": [380, 200]
   },
   "config": {
@@ -32,13 +32,6 @@
           "field": "note"
         }
       }
-    },
-    {
-      "data": {
-        "url": "ne_110m_graticules_5.json",
-        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
-      },
-      "mark": {"type": "geoshape", "stroke": "darkgray"}
     },
     {
       "data": {
@@ -73,6 +66,13 @@
           {"field": "Gini", "type": "quantitative"}
         ]
       }
+    },
+    {
+      "data": {
+        "url": "ne_110m_graticules_5.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
+      },
+      "mark": {"type": "geoshape", "stroke": "darkgray"}
     }
   ]
 }

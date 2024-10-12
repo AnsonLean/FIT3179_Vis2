@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "hconcat": [
       {
-        "width": 350,
+        "width": 300,
         "height": 300,
         "title": "Gini Coefficient vs Expenditure Mean for 2022",
         "data": {
@@ -44,7 +44,7 @@
                     "#A6D854", "#FFD92F", "#E5C494", "#B3B3B3"
                   ]
                 },
-                "legend": {"orient": "bottom", "direction": "horizontal"}
+                "legend": {"orient": "none", "direction": "horizontal", "legendY":350, "legendX":-20, "title":"State"}
               },
               "opacity": {
                 "condition": {"selection": "state_highlight", "value": 1},
@@ -83,7 +83,7 @@
         ]
       },
       {
-        "width": 350,
+        "width": 300,
         "height": 300,
         "title": "Gini Coefficient vs Median Income for 2022",
         "data": {
@@ -163,7 +163,7 @@
         ]
       },
       {
-        "width": 350,
+        "width": 300,
         "height": 300,
         "title": "Gini Coefficient vs Poverty Rate for 2022",
         "data": {

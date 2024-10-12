@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump Chart of GDP per capita rankings over time with flags",
+  "width": 500,
   "height": 300,
-  "width": 600,
   "title": "GDP per capita rankings of countries over time",
   "data": {
-    "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/bumpchart_GDP.json"
+    "url": "bumpchart_GDP.json"
   },
   "layer": [
     {
