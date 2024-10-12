@@ -7,7 +7,7 @@
       {
         "hconcat": [
             {
-                "width": 475,
+                "width": 350,
                 "height": 300,
                 "title": "Gini in Malaysia",
                 "selection": {
@@ -42,7 +42,7 @@
     
             },
             {
-                "width": 475,
+                "width": 350,
                 "height": 300,
                 "title": "Average and Median Income of Malaysian Households",
                 "selection": {
@@ -77,7 +77,7 @@
                     "type": "nominal",
                     "scale": {"domain": ["Average Income", "Median Income"],
                               "range": ["blue", "orange","red", "turquoise", "purple"]},
-                    "legend": {"title": "Type"}
+                    "legend": {"title": "Type", "orient": "none","direction": "horizontal","titleAnchor":"middle", "legendX":350, "legendY":330}
                 },
                 "tooltip": [
                     {"field": "date", "type": "temporal", "title": "Date"},
@@ -91,7 +91,7 @@
                 }
             },
             {
-                "width": 475,
+                "width": 350,
                 "height": 300,
                 "title": "Poverty Indicators in Malaysia",
                 "selection": {
@@ -145,8 +145,8 @@
         ]
       },
       {
-        "width": 1550,
-        "height": 60,
+        "width": 1185,
+        "height": 50,
         "mark": "line",
         "params": [
           {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}

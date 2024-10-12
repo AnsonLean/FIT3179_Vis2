@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bump Chart of Expense (% of GDP) rankings over time with flags",
+    "height": 300,
+    "width": 600,
+    "title": "Expense (% of GDP) rankings of countries over time",
+    "data": {
+      "url": "bumpchart_expenses.json" 
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "line"
+        },
+        "encoding": {
+          "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+          "y": {
+            "field": "Rank",
+            "type": "quantitative",
+            "title": "Rank",
+            "scale": {"reverse": true, "padding": 10},
+            "axis": {"labelPadding": 10}
+          },
+          "color": {
+            "field": "Country", 
+            "type": "nominal", 
+            "title": "Country", 
+            "scale": {
+              "range": [
+                "#005BAC", "#808080", "#FF0000", "#8B4513", "#ADD8E6", "#800080", "#C71585", "#FFA500"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "image",
+          "width": 20,
+          "height": 20
+        },
+        "encoding": {
+          "x": {"field": "Year", "type": "ordinal"},
+          "y": {
+            "field": "Rank",
+            "type": "quantitative",
+            "scale": {"reverse": true, "padding": 10},
+            "axis": {"labelPadding": 10}
+          },
+          "url": {"field": "Flag"},
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Expense (% of GDP)", "type": "quantitative", "title": "Expense (% of GDP)", "format":","},
+            {"field": "Year", "type": "ordinal"},
+            {"field": "Rank", "type": "quantitative"}
+          ]
+        }
+      }
+    ],
+    "config": {
+      "legend": {
+        "orient": "none",
+        "direction": "horizontal",
+        "titleFontSize": 12,
+        "labelFontSize": 10,
+        "legendX": 10,
+        "legendY": 350,
+        "gradientLength": 300
+      }
+    }
+  }
+  

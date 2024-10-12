@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "hconcat": [
       {
-        "width": 475,
-        "height": 400,
+        "width": 350,
+        "height": 300,
         "title": "Gini Coefficient vs Expenditure Mean for 2022",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
@@ -35,7 +35,16 @@
               },
               "color": {
                 "field": "state",
-                "type": "nominal"
+                "type": "nominal",
+                "scale": {
+                  "range": [
+                    "#E69F00", "#56B4E9", "#009E73", "#F0E442",
+                    "#0072B2", "#D55E00", "#CC79A7", "#999999",
+                    "#66C2A5", "#FC8D62", "#8DA0CB", "#E78AC3",
+                    "#A6D854", "#FFD92F", "#E5C494", "#B3B3B3"
+                  ]
+                },
+                "legend": {"orient": "bottom", "direction": "horizontal"}
               },
               "opacity": {
                 "condition": {"selection": "state_highlight", "value": 1},
@@ -74,8 +83,8 @@
         ]
       },
       {
-        "width": 475,
-        "height": 400,
+        "width": 350,
+        "height": 300,
         "title": "Gini Coefficient vs Median Income for 2022",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
@@ -107,7 +116,15 @@
               },
               "color": {
                 "field": "state",
-                "type": "nominal"
+                "type": "nominal",
+                "scale": {
+                  "range": [
+                    "#E69F00", "#56B4E9", "#009E73", "#F0E442",
+                    "#0072B2", "#D55E00", "#CC79A7", "#999999",
+                    "#66C2A5", "#FC8D62", "#8DA0CB", "#E78AC3",
+                    "#A6D854", "#FFD92F", "#E5C494", "#B3B3B3"
+                  ]
+                }
               },
               "opacity": {
                 "condition": {"selection": "state_highlight", "value": 1},
@@ -146,8 +163,8 @@
         ]
       },
       {
-        "width": 475,
-        "height": 400,
+        "width": 350,
+        "height": 300,
         "title": "Gini Coefficient vs Poverty Rate for 2022",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
@@ -180,7 +197,15 @@
               },
               "color": {
                 "field": "state",
-                "type": "nominal"
+                "type": "nominal",
+                "scale": {
+                  "range": [
+                    "#E69F00", "#56B4E9", "#009E73", "#F0E442",
+                    "#0072B2", "#D55E00", "#CC79A7", "#999999",
+                    "#66C2A5", "#FC8D62", "#8DA0CB", "#E78AC3",
+                    "#A6D854", "#FFD92F", "#E5C494", "#B3B3B3"
+                  ]
+                }
               },
               "opacity": {
                 "condition": {"selection": "state_highlight", "value": 1},
