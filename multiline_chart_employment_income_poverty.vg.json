@@ -9,7 +9,7 @@
             {
                 "width": 300,
                 "height": 300,
-                "title": "Average and Median Income of Malaysian Households",
+                "title": "Average and Median Income",
                 "selection": {
                 "income_type_highlight": {
                     "type": "multi",
@@ -58,7 +58,7 @@
             {
                 "width": 300,
                 "height": 300,
-                "title": "Poverty Indicators in Malaysia",
+                "title": "Poverty Rate",
                 "selection": {
                 "poverty_type_highlight": {
                     "type": "multi",

@@ -18,7 +18,7 @@
           "field": "Rank",
           "type": "quantitative",
           "title": "Rank",
-          "scale": {"reverse": true, "padding": 10}, 
+          "scale": {"reverse": true, "padding": 10, "domain": [1, 6]}, 
           "axis": {"labelPadding": 10}
         },
         "color": {

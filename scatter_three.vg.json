@@ -84,7 +84,7 @@
       {
         "width": 300,
         "height": 300,
-        "title": "Gini Coefficient vs Median Income for 2022",
+        "title": "Average Income vs Poverty Rate for 2022",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
         },
