@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Bump Chart of Expense (% of GDP) rankings over time with flags",
-    "width": 500,
+    "width": 510,
     "height": 300,
     "title": "Expense (% of GDP) rankings of countries over time",
     "data": {
