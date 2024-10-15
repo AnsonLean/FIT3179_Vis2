@@ -4,7 +4,7 @@
       {
         "width": 285,
         "height": 300,
-        "title": "Income Mean vs Expenditure Mean for 2022",
+        "title": "Average Income vs Average Expenditure (2022)",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
         },
@@ -78,13 +78,37 @@
                 "value": 0
               }
             }
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text",
+              "text": "Do higher income mean",
+              "dx":-70,
+              "dy":-122,
+              "fontStyle": "italic",
+              "fontSize":12,
+              "fontWeight":"bold"
+            }
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text",
+              "text": "higher expenditure?",
+              "dx":-70,
+              "dy":-110,
+              "fontStyle": "italic",
+              "fontSize":12,
+              "fontWeight":"bold"
+            }
           }
         ]
       },
       {
         "width": 290,
         "height": 300,
-        "title": "Average Income vs Poverty Rate for 2022",
+        "title": "Average Income vs Poverty Rate (2022)",
         "data": {
           "url": "https://raw.githubusercontent.com/AnsonLean/FIT3179_Vis2/refs/heads/main/dataset/hies_state.csv"
         },
@@ -157,6 +181,30 @@
                 },
                 "value": 0
               }
+            }
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text",
+              "text": "Do lower income mean",
+              "dx":80,
+              "dy":-127,
+              "fontStyle": "italic",
+              "fontSize":12,
+              "fontWeight":"bold"
+            }
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text",
+              "text": "higher poverty rate?",
+              "dx":80,
+              "dy":-115,
+              "fontStyle": "italic",
+              "fontSize":12,
+              "fontWeight":"bold"
             }
           }
         ]
@@ -241,8 +289,31 @@
             }
           },
           {
-            "mark": {"type": "text", "fontSize": 12, "fontStyle": "italic", "font": "Arial"},
-            "encoding": {"text": {"value": "Note: Gini Coefficient range between 0.28 - 0.40"}, "x":{ "value": 130}, "y": {"value": 10}}
+            "data":{"values": [{}]},
+            "mark": {"type": "text", "fontStyle": "italic", "font": "Arial", "fontSize":12, "fontWeight":"bold"},
+            "encoding": {"text": {"value": "Note: Gini Coefficient range between 0.28 - 0.40"}, "x":{ "value": 140}, "y": {"value": 15}}
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text", 
+              "text": "0 indicate perfect equality,",
+              "dx": -53,
+              "dy": -115,
+              "fontStyle": "italic", 
+              "fontSize":12, 
+              "fontWeight":"bold"}
+          },
+          {
+            "data":{"values": [{}]},
+            "mark": {
+              "type": "text", 
+              "text": "1 indicate total inequality",
+              "dx": -57,
+              "dy": -100,
+              "fontStyle": "italic", 
+              "fontSize":12, 
+              "fontWeight":"bold"}
           }
         ]
       }

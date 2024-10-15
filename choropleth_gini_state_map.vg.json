@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Gini Coefficient by State in Malaysia (2022)",
+  "title": {"text":"Inequality by State in Malaysia (2022)", "fontSize":20, "font":"Cambria"},
   "width": 1150,
   "height": 500,
   "projection": {
@@ -73,6 +73,28 @@
         "format": {"type": "topojson", "feature": "ne_110m_graticules_5"}
       },
       "mark": {"type": "geoshape", "stroke": "lightgray"}
+    },
+    {
+      "data":{"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": "Note: Value of 0 indicate perfect equality,",
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "dx": 0,
+        "dy": -120
+      }
+    },
+    {
+      "data":{"values": [{}]},
+      "mark": {
+        "type": "text",
+        "text": "Value of 1 indicate total inequality",
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "dx": 12,
+        "dy": -105
+      }
     }
   ]
 }

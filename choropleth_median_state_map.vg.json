@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Median Income by State in Malaysia (2022)",
+  "title": {"text":"Median Income by State in Malaysia (2022)", "fontSize":20, "font":"Cambria"},
   "width": 1150,
   "height": 500,
   "projection": {
